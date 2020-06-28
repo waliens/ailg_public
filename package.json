@@ -1,0 +1,25 @@
+{
+  "name": "ailg_public",
+  "version": "0.1.0",
+  "description": "ailg public site",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waliens/ailg_public.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/waliens/ailg_public/issues"
+  },
+  "homepage": "https://github.com/waliens/ailg_public#readme",
+  "dependencies": {
+    "buefy": "^0.8.20",
+    "i18n": "^0.10.0",
+    "moment": "^2.27.0",
+    "vue-router": "^3.3.4",
+    "vue-store": "^0.3.1-moved"
+  }
+}
