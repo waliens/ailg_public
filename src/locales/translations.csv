@@ -1,3 +1,11 @@
 key,en,fr
-hello,hello,bonjour
-bbye,bbye,aaurevoir
+navbar.about,About us,Qui sommes nous
+navbar.vision,Vision &amp; mission,Vision et mission
+navbar.engineer,Engineer,Ingénieur.e
+navbar.company,Company,Entreprise
+navbar.student,Student,Étudiant.e
+navbar.history,History,Histoire
+navbar.contact,Contact,Contact
+navbar.blog,Blog,Blog
+navbar.login,Log in,Se connecter
+

@@ -31,6 +31,7 @@
     "onchange": "^7.0.2",
     "sass-loader": "^8.0.2",
     "vue-i18n": "^8.18.2",
+    "vue-moment": "^4.1.0",
     "vue-router": "^3.3.4",
     "vue-store": "^0.3.1-moved",
     "vuex": "^3.4.0"
