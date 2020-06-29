@@ -1,11 +1,13 @@
 {
   "name": "ailg_public",
+  "scripts": {
+    "serve": "npx vue-cli-service serve",
+    "translations2json": "npx i18n-csv2json-cli --from src/locales/translations.csv --to src/locales/json --format",
+    "watch-translations": "npx onchange -i 'src/locales/translations.csv' -- npm run-script translations2json"
+  },
   "version": "0.1.0",
   "description": "ailg public site",
   "main": "src/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/waliens/ailg_public.git"
@@ -16,10 +18,24 @@
   },
   "homepage": "https://github.com/waliens/ailg_public#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "@vue/cli": "^4.4.6",
+    "@vue/cli-service": "^4.4.6",
     "buefy": "^0.8.20",
+    "bulma": "^0.9.0",
     "i18n": "^0.10.0",
+    "i18n-csv2json-cli": "^1.0.2",
     "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "sass-loader": "^8.0.2",
+    "vue-i18n": "^8.18.2",
     "vue-router": "^3.3.4",
-    "vue-store": "^0.3.1-moved"
+    "vue-store": "^0.3.1-moved",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0"
   }
 }

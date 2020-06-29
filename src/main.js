@@ -8,7 +8,7 @@ import VueRouter from 'vue-router';
 
 import moment from 'moment';
 moment.locale(window.navigator.userLanguage || window.navigator.language || 'en');
-moment.tz.setDefault(moment.tz.guess());
+// moment.tz.setDefault(moment.tz.guess());
 
 import router from './router';
 Vue.use(VueRouter);
