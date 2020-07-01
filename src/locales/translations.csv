@@ -1,4 +1,5 @@
 key,en,fr
+knowmore,Know moren,En savoir plus
 navbar.about,About us,Qui sommes nous
 navbar.vision,Vision &amp; mission,Vision et mission
 navbar.engineer,Engineer,Ingénieur.e
@@ -8,4 +9,8 @@ navbar.history,History,Histoire
 navbar.contact,Contact,Contact
 navbar.blog,Blog,Blog
 navbar.login,Log in,Se connecter
-
+ailg.full,TBD,Association des ingénieurs diplômés de l'Université de Liège
+home.presidentword.title,President's word,Mot du président
+home.beneficiary.engineer.description,,Devenez membre de l'AILg et découvrez les avantages de l'accès au réseau privé des ingénieurs diplômés de l'Université de Liège.
+home.beneficiary.company.description,,Devenez membre société du réseau privé des ingénieurs diplômés de l'Université de Liège et découvrez les avantages associés au membership.
+home.beneficiary.student.description,,Communiquez avec les ingénieurs diplômés de l'Université de Liège et profitez des avantages de leur réseau privé.

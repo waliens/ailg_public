@@ -1,6 +1,6 @@
 <template>
   <b-navbar>
-    <template slot="brand">
+    <template slot="brand" :fixed-top="true">
       <b-navbar-item tag="router-link" :to="{ path: '/'}">
         <img class="ailg_logo" src="@/assets/images/logo_ailg.png">
       </b-navbar-item>
