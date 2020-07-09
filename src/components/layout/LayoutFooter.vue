@@ -37,18 +37,6 @@
           </li>
         </ul>
       </div>
-      <div class="column">
-        <h3 class="subtitle">{{$t("footer.sponsors")}}</h3>
-        <b-carousel icon-pack="fas" :indicator="false">
-          <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-            <a :href="carousel.href">
-              <figure class="image is-128x128">
-                <img class="sponsor_logo_image" :src="carousel.image"/>
-              </figure>
-            </a>
-          </b-carousel-item>
-        </b-carousel>
-      </div>
     </div>
     <div class="content has-text-centered">
       <p>
@@ -59,31 +47,11 @@
 </template>
 
 <script>
-import BCarousel from "buefy/src/components/carousel/Carousel";
-import BCarouselItem from "buefy/src/components/carousel/CarouselItem";
 import moment from 'moment';
 
 export default {
   name: "LayoutFooter",
-  components: {BCarouselItem, BCarousel},
-  data() {
-    return {
-      // TODO fetch this from somewhere
-      carousels: [
-        {"src": "https://www.fnherstal.com/", "image": "http://www.ailg.be/uploads/images/FN2015_HORIZONTAL_PANTONE.JPG"},
-        {"src": "https://www.intradel.be/", "image": "http://www.ailg.be/uploads/images/INTRADEL.JPG"},
-        {"src": "https://www.libertyliegedudelange.be/", "image": "http://www.ailg.be/uploads/images/Liberty_2019_Landscape_RGB_Blue (002).jpg"},
-        {"src": "http://www.belemaire.be/", "image": "http://www.ailg.be/uploads/images/LOGO BEL TEXTE FOND BLANC.JPG"},
-        {"src": "http://www.ailg.be/uploads/images/logo%20ISSeP.jpg", "image": "http://www.ailg.be/uploads/images/logo ISSeP.jpg"},
-        {"src": "http://www.sodraep.be/", "image": "http://www.ailg.be/uploads/images/Logo Sodraep (002).jpg"},
-        {"src": "http://www.traitex.be/", "image": "http://www.ailg.be/uploads/images/LogoTraitex-01 (002).jpg"},
-        {"src": "https://www.cometgroup.be/", "image": "http://www.ailg.be/uploads/images/Logo_comet_traitements_CMYK (002).jpg"},
-        {"src": "https://www.safran-group.com/fr", "image": "http://www.ailg.be/uploads/images/LOGO_SAFRAN_rvb (002).jpg"},
-        {"src": "https://www.plm.automation.siemens.com/global/en/", "image": "http://www.ailg.be/uploads/images/SIEMENS Logo.jpg"},
-        {"src": "https://www.sonaca.com/", "image": "http://www.ailg.be/uploads/images/Sonaca_Logotype_RGB_(+).jpg"}
-      ]
-    }
-  },
+  components: {},
   computed: {
     copyrightDates() {
       let current = moment().year();

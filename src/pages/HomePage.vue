@@ -59,15 +59,21 @@
       </div>
     </section>
 
+    <section class="section partners">
+      <h2 class="title">{{$t('home.partners.ours')}}</h2>
+      <partners-grid></partners-grid>
+    </section>
+
   </div>
 </template>
 
 <script>
 import BeneficiaryCard from "@/components/home/BeneficiaryCard";
+import PartnersGrid from "@/components/home/PartnersGrid";
 
 export default {
   name: 'HomePage',
-  components: { BeneficiaryCard }
+  components: { BeneficiaryCard, PartnersGrid }
 };
 </script>
 
@@ -95,8 +101,12 @@ export default {
   background-color: $grey-lighter;
 }
 
-.title, .subtitle {
+.hero-body .title, .hero-body .subtitle {
   color: $dark-secondary-invert;
+}
+
+.section .title {
+  color: $dark-secondary;
 }
 
 .hero {
