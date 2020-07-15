@@ -1,13 +1,13 @@
 <template>
-    <div id="app" class="page-container">
-        <layout-navbar></layout-navbar>
+  <div id="app" class="page-container">
+    <layout-navbar></layout-navbar>
 
-        <div class="app-content">
-            <router-view v-if="initialized"></router-view>
-        </div>
-
-        <layout-footer></layout-footer>
+    <div class="app-content">
+      <router-view v-if="initialized"></router-view>
     </div>
+
+    <layout-footer></layout-footer>
+  </div>
 </template>
 
 <script>
@@ -31,12 +31,8 @@
 </script>
 
 <style>
-    .page-container {
-        position: relative;
-        min-height: 100vh;
-    }
-
-    .app-content {
-        padding-bottom: 144px;
-    }
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
 </style>

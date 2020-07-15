@@ -113,4 +113,8 @@ export default {
   background-color: $dark-secondary;
 }
 
+.partners title {
+  margin-bottom: 10px;
+}
+
 </style>

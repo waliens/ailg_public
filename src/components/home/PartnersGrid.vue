@@ -1,10 +1,10 @@
 <template>
-  <div class="tile is-ancestor">
-    <div class="tile" v-for="partner in partners">
+  <div class="columns is-multiline">
+    <div class="column" v-for="partner in partners">
       <b-tooltip :label="partner.name">
         <a :href="partner.href">
           <figure class="image is-128x128">
-           <img class="sponsor_logo" :src="partner.image" />
+           <img class="logo is-centered" :src="partner.image" />
           </figure>
         </a>
       </b-tooltip>
@@ -39,10 +39,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.sponsor-logo {
+.logo {
   max-height: 100%;
   max-width: 100%;
   height: auto;
   width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 </style>
