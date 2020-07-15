@@ -14,17 +14,22 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section presidentandevents">
       <div class="columns">
-        <div class="column">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">{{$t("home.presidentword.title")}}</p>
-            </header>
-            <div class="card-content">
-              <p class="content">Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus</p>
+        <div class="column presidentword">
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-128x128">
+                <img src="@/assets/images/raymondpropson.jpg" />
+              </p>
+            </figure>
+            <div class="media-content">
+              <p class="content">
+                <strong>{{$t('home.presidentword.title')}}</strong> <br/>
+                Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus. Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus. Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus
+              </p>
             </div>
-          </div>
+          </article>
         </div>
         <div class="column">
           <p>Prochains événements</p>
@@ -80,23 +85,6 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/colors.scss";
 
-/*.hero.has-background {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-background {
-  position: absolute;
-  object-fit: cover;
-  object-position: center center;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-background.is-transparent {
-  opacity: 0.75;
-}*/
-
 .beneficiaries {
   background-color: $grey-lighter;
 }
@@ -115,6 +103,23 @@ export default {
 
 .partners title {
   margin-bottom: 10px;
+}
+
+.presidentandevents {
+  padding: 0;
+}
+
+.presidentandevents .columns {
+  margin: 0;
+}
+
+.presidentword, .presidentword strong {
+  background-color: $primary;
+  color: $primary-invert;
+}
+
+.presidentword .media-content {
+  min-height: 180px; /* for image not to overflow */
 }
 
 </style>
