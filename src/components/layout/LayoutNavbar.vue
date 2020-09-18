@@ -1,13 +1,13 @@
 <template>
-  <b-navbar>
+  <b-navbar type="is-black">
     <template slot="brand" :fixed-top="true">
       <b-navbar-item tag="router-link" :to="{ path: '/'}">
-        <img class="ailg_logo" src="@/assets/images/logo_ailg.png">
+        <img class="ailg_logo" src="@/assets/images/logo_ailg.png" height="150px">
       </b-navbar-item>
     </template>
 
     <template slot="start">
-      <b-navbar-dropdown :label="$t('navbar.about')">
+      <b-navbar-dropdown :label="$t('navbar.about')" class="first-navbar-item">
         <b-navbar-item tag="router-link" :to="{ path: '/vision' }">
           {{$t("navbar.vision")}}
         </b-navbar-item>
@@ -58,6 +58,18 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/colors.scss";
 /* TODO make it a float*/
-.ailg_logo { }
+.ailg_logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 15px;
+  margin-left: 25px;
+  max-height: initial;
+  max-width: initial;
+  height: 70px;
+}
 
+.first-navbar-item {
+  margin-left: 70px;
+}
 </style>

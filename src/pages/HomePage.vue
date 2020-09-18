@@ -20,7 +20,7 @@
           <article class="media">
             <figure class="media-left">
               <p class="image is-128x128">
-                <img src="@/assets/images/raymondpropson.jpg" />
+
               </p>
             </figure>
             <div class="media-content">
@@ -97,8 +97,13 @@ export default {
   color: $dark-secondary;
 }
 
+.hero-body {
+  background: linear-gradient(black 0%, rgba(0, 0, 0, 0.25) 15%)
+}
+
 .hero {
-  background-color: $dark-secondary;
+  background: url('~@/assets/images/banner.png') center;
+  background-size: cover;
 }
 
 .partners title {

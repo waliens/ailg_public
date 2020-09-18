@@ -1,6 +1,6 @@
 <template>
   <div class="columns is-multiline">
-    <div class="column" v-for="partner in partners">
+    <div class="column is-narrow" v-for="partner in partners">
       <b-tooltip :label="partner.name">
         <a :href="partner.href">
           <figure class="image is-128x128">
@@ -47,4 +47,10 @@ export default {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
 </style>
