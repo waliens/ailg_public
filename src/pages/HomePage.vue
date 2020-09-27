@@ -12,22 +12,17 @@
       <div class="columns">
         <div class="column presidentword">
           <article class="media">
-            <figure class="media-left">
-              <p class="image is-128x128">
-
-              </p>
-            </figure>
             <div class="media-content">
+              <h4 class="subtitle">{{$t('home.presidentword.title')}}</h4>
               <p class="content">
-                <strong>{{$t('home.presidentword.title')}}</strong> <br/>
                 Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus. Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus. Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus
               </p>
             </div>
           </article>
         </div>
         <div class="column">
-          <p>Prochains événements</p>
-          <p>Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus</p>
+          <h4 class="subtitle">Prochains événements</h4>
+          <event-list :events="events"></event-list>
         </div>
       </div>
     </section>
@@ -70,10 +65,25 @@
 import BeneficiaryCard from "@/components/home/BeneficiaryCard";
 import PartnersGrid from "@/components/home/PartnersGrid";
 import FadedHero from "@/components/layout/FadedHero";
+import EventList from "../components/home/EventList";
 
 export default {
   name: 'HomePage',
-  components: { BeneficiaryCard, PartnersGrid, FadedHero }
+  components: {EventList, BeneficiaryCard, PartnersGrid, FadedHero },
+  computed: {
+    events() {
+      return [
+        {
+          name: "Repas",
+          datetime: "2020-05-02T18:00:00"
+        },
+        {
+          name: "AG",
+          datetime: "2020-08-25T19:25:00"
+        }
+      ]
+    }
+  }
 };
 </script>
 
@@ -96,7 +106,7 @@ export default {
   margin: 0;
 }
 
-.presidentword, .presidentword strong {
+.presidentword, .presidentword .subtitle {
   background-color: $primary;
   color: $primary-invert;
 }
