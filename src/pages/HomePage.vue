@@ -1,18 +1,12 @@
 <template>
   <div>
-    <section class="hero has-background is-medium">
-      <!--<img alt="hero" class="hero-background is-transparent" src="@/assets/images/banner.png" />-->
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            {{$t("ailg.full")}}
-          </h1>
-          <h2 class="subtitle">
-            Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus
-          </h2>
-        </div>
-      </div>
-    </section>
+    <faded-hero
+      background_image="banner.png"
+      top_color="#0A0A0A"
+      :title="$t('ailg.full')"
+      subtitle="Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus">
+    </faded-hero>
+
 
     <section class="section presidentandevents">
       <div class="columns">
@@ -75,10 +69,11 @@
 <script>
 import BeneficiaryCard from "@/components/home/BeneficiaryCard";
 import PartnersGrid from "@/components/home/PartnersGrid";
+import FadedHero from "@/components/layout/FadedHero";
 
 export default {
   name: 'HomePage',
-  components: { BeneficiaryCard, PartnersGrid }
+  components: { BeneficiaryCard, PartnersGrid, FadedHero }
 };
 </script>
 
@@ -87,23 +82,6 @@ export default {
 
 .beneficiaries {
   background-color: $grey-lighter;
-}
-
-.hero-body .title, .hero-body .subtitle {
-  color: $dark-secondary-invert;
-}
-
-.section .title {
-  color: $dark-secondary;
-}
-
-.hero-body {
-  background: linear-gradient(black 0%, rgba(0, 0, 0, 0.25) 15%)
-}
-
-.hero {
-  background: url('~@/assets/images/banner.png') center;
-  background-size: cover;
 }
 
 .partners title {
