@@ -7,7 +7,7 @@ export default class Event extends Model {
     return 'event';
   }
 
-  async getFutureEvents() {
+  static async getFutureEvents() {
     let params = {start: moment().now().toISOString()};
     return await axios.get(this.uri, {params});
   }

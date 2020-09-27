@@ -65,13 +65,16 @@
 import BeneficiaryCard from "@/components/home/BeneficiaryCard";
 import PartnersGrid from "@/components/home/PartnersGrid";
 import FadedHero from "@/components/layout/FadedHero";
-import EventList from "../components/home/EventList";
+import EventList from "@/components/home/EventList";
+import Event from "@/utils/api/Event";
 
 export default {
   name: 'HomePage',
   components: {EventList, BeneficiaryCard, PartnersGrid, FadedHero },
   computed: {
-    events() {
+    async events() {
+      let events = await Event.getFutureEvents();
+      console.log(events);
       return [
         {
           name: "Repas",
