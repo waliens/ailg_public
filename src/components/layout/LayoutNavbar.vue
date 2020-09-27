@@ -8,7 +8,7 @@
 
     <template slot="start">
       <b-navbar-dropdown :label="$t('navbar.about')" class="first-navbar-item">
-        <b-navbar-item tag="router-link" :to="{ path: '/vision' }">
+        <b-navbar-item tag="router-link" :to="{ path: '/mission' }">
           {{$t("navbar.vision")}}
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/history' }">

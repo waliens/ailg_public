@@ -19,8 +19,8 @@ import store from './store';
 import Buefy from 'buefy';
 Vue.use(Buefy, {defaultIconPack: 'fas'});
 
-// import axios from 'axios';
-// axios.defaults.baseURL = process.env.VUE_APP_API;
+import axios from 'axios';
+axios.defaults.baseURL = "https://ailg.claroline.com/apiv2/";
 
 Vue.config.productionTip = false;
 
