@@ -14,16 +14,16 @@
 </template>
 
 <script>
-import {formatDatetime} from "@/utils/helpers";
+import { formatDatetime } from '@/utils/helpers'
 
 export default {
-  name: "EventListElement",
+  name: 'EventListElement',
   props: {
     name: { type: String, required: true },
-    datetime: { type: String, required: true}
+    datetime: { type: String, required: true }
   },
   computed: {
-    when() {
+    when () {
       return formatDatetime(this.datetime)
     }
   }

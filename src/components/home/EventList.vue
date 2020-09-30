@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import EventListElement from "./EventListElement";
+import EventListElement from './EventListElement'
 export default {
-  name: "EventList",
-  components: {EventListElement},
-  props: { events: { type: Array }}
+  name: 'EventList',
+  components: { EventListElement },
+  props: { events: { type: Array } }
 }
 </script>
 

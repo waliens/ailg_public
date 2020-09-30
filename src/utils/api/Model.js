@@ -1,34 +1,33 @@
-import axios from 'axios';
-import qs from 'qs';
+import axios from 'axios'
+import qs from 'qs'
 
 export default class Model {
-
   /**
    * @param {Object} [props]    Object containing the properties of the object to set
    */
-  constructor(props) {
+  constructor (props) {
     if (new.target === Model) {
-      throw new Error('Model is an abstract class and cannot be constructed directly.');
+      throw new Error('Model is an abstract class and cannot be constructed directly.')
     }
 
-    this._initProperties();
-    this.populate(props);
+    this._initProperties()
+    this.populate(props)
   }
 
   /**
    * Initialize the properties allowed for current object (the children must override this method to initialize their
    * custom properties)
    */
-  _initProperties() {
-    this.id = null;
+  _initProperties () {
+    this.id = null
   }
 
-  toString() {
-    let str = `[${this.className}] ${this.id}`;
-    if(this.name) {
-      str += `: ${this.name}`;
+  toString () {
+    let str = `[${this.className}] ${this.id}`
+    if (this.name) {
+      str += `: ${this.name}`
     }
-    return str;
+    return str
   }
 
   /**
@@ -36,8 +35,8 @@ export default class Model {
    *
    * @returns {this} the clone of the object
    */
-  clone() {
-    return new this.constructor(JSON.parse(JSON.stringify(this)));
+  clone () {
+    return new this.constructor(JSON.parse(JSON.stringify(this)))
   }
 
   /**
@@ -45,10 +44,10 @@ export default class Model {
    *
    * @param {Object} props Object containing the properties to set
    */
-  populate(props) {
-    if(props) {
-      for(let key in props) {
-        this[key] = props[key];
+  populate (props) {
+    if (props) {
+      for (const key in props) {
+        this[key] = props[key]
       }
     }
   }
@@ -61,15 +60,15 @@ export default class Model {
    *
    * @returns {Object} Object with public properties only
    */
-  getPublicProperties(forcedProperties=[]) {
-    let props = {};
-    for(let key in this) {
-      let value = this[key];
-      if(!key.startsWith('_') && (forcedProperties.includes(key) || value != null)) {
-        props[key] = value;
+  getPublicProperties (forcedProperties = []) {
+    const props = {}
+    for (const key in this) {
+      const value = this[key]
+      if (!key.startsWith('_') && (forcedProperties.includes(key) || value != null)) {
+        props[key] = value
       }
     }
-    return props;
+    return props
   }
 
   /**
@@ -79,8 +78,8 @@ export default class Model {
    *
    * @returns {this} The fetched object
    */
-  static async fetch(id) {
-    return new this({id}).fetch();
+  static async fetch (id) {
+    return new this({ id }).fetch()
   }
 
   /**
@@ -88,15 +87,15 @@ export default class Model {
    *
    * @returns {this} The object with fetched properties
    */
-  async fetch() {
-    if(this.isNew()) {
-      throw new Error('Cannot fetch a model with no ID.');
+  async fetch () {
+    if (this.isNew()) {
+      throw new Error('Cannot fetch a model with no ID.')
     }
 
-    let {data} = await axios.get(this.uri);
+    const { data } = await axios.get(this.uri)
 
-    this.populate(data);
-    return this;
+    this.populate(data)
+    return this
   }
 
   /**
@@ -106,14 +105,14 @@ export default class Model {
    *
    * @returns {Array<Model>} The list of all models
    */
-  static async fetchAll(params={}) {
-    let {data} = await axios.get(this.collectionName, {
+  static async fetchAll (params = {}) {
+    const { data } = await axios.get(this.collectionName, {
       params,
       paramsSerializer: params => {
-        return qs.stringify(params);
+        return qs.stringify(params)
       }
-    });
-    return data.map(elem => new this(elem));
+    })
+    return data.map(elem => new this(elem))
   }
 
   /**
@@ -125,21 +124,20 @@ export default class Model {
    *
    * @returns {this} The saved object, as returned by backend
    */
-  async save(params={}, forcedProperties=[]) {
-    let data;
-    if(this.isNew()) {
-      ({data} = await axios.post(this.uri, this.getPublicProperties(forcedProperties), {
+  async save (params = {}, forcedProperties = []) {
+    let data
+    if (this.isNew()) {
+      ({ data } = await axios.post(this.uri, this.getPublicProperties(forcedProperties), {
         params,
         paramsSerializer: params => {
-          return qs.stringify(params);
+          return qs.stringify(params)
         }
-      }));
+      }))
+    } else {
+      ({ data } = await axios.put(this.uri, this.getPublicProperties(forcedProperties)))
     }
-    else {
-      ({data} = await axios.put(this.uri, this.getPublicProperties(forcedProperties)));
-    }
-    this.populate(data);
-    return this;
+    this.populate(data)
+    return this
   }
 
   /**
@@ -147,37 +145,36 @@ export default class Model {
    *
    * @param {number} id The identifier of the object to delete
    */
-  static async delete(id) {
-    return new this({id}).delete();
+  static async delete (id) {
+    return new this({ id }).delete()
   }
 
   /**
    * Delete the object
    */
-  async delete() {
-    if(this.isNew()) {
-      throw new Error('Cannot delete a model with no ID.');
+  async delete () {
+    if (this.isNew()) {
+      throw new Error('Cannot delete a model with no ID.')
     }
 
-    await axios.delete(this.uri);
+    await axios.delete(this.uri)
   }
 
   /**
    * @returns {boolean} whether or not the object is new (not yet added to the database)
    */
-  isNew() {
-    return (this.id == null);
+  isNew () {
+    return (this.id == null)
   }
 
   /**
    * @returns {string} API URI to use to perform operations on the object
    */
-  get uri() {
-    if(this.isNew()) {
-      return `${this.className}`;
-    }
-    else {
-      return `${this.className}/${this.id}`;
+  get uri () {
+    if (this.isNew()) {
+      return `${this.className}`
+    } else {
+      return `${this.className}/${this.id}`
     }
   }
 
@@ -185,19 +182,17 @@ export default class Model {
    * @abstract
    * @returns {string} The class name of the model used in API endpoints
    */
-  static get className() {
-    throw new Error('Abstract getter className() not overriden in child.');
+  static get className () {
+    throw new Error('Abstract getter className() not overriden in child.')
     // return this.name.toLowerCase(); not used to allow minification
     // (see https://stackoverflow.com/questions/29310530/get-the-class-name-of-es6-class-instance#39522406)
   }
 
-  get className() {
-    return this.constructor.className;
+  get className () {
+    return this.constructor.className
   }
 
-  static get collectionName() {
-    return this.className + 's';
+  static get collectionName () {
+    return this.className + 's'
   }
-
-
 }

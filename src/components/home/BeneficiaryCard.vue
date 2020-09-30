@@ -27,7 +27,7 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
@@ -44,6 +44,5 @@ p.content, h2.title, a {
 .card-footer p {
   margin-right: 10px;
 }
-
 
 </style>

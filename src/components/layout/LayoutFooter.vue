@@ -47,16 +47,16 @@
 </template>
 
 <script>
-import moment from 'moment';
+import moment from 'moment'
 
 export default {
-  name: "LayoutFooter",
+  name: 'LayoutFooter',
   components: {},
   computed: {
-    copyrightDates() {
-      let current = moment().year();
+    copyrightDates () {
+      const current = moment().year()
       if (current > 2020) {
-        return '2020-' + current;
+        return '2020-' + current
       } else {
         return '2020'
       }

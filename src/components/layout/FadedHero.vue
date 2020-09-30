@@ -14,35 +14,35 @@
 </template>
 
 <script>
-  export default {
-    name: "FadedHero",
-    props: {
-      background_image: {
-        type: String,
-        required: true
-      },
-      title: {
-        type: String,
-        required: true
-      },
-      subtitle: {
-        type: String,
-        required: true
-      },
-      top_color: {
-        type: String,
-        required: true
-      }
+export default {
+  name: 'FadedHero',
+  props: {
+    background_image: {
+      type: String,
+      required: true
     },
-    computed: {
-      backgroundImageStyle() {
-        return "background: url('" + require(`@/assets/images/${this.background_image}`) + " ') center; background-size: cover;";
-      },
-      backgroundFadeStyle() {
-        return "background: linear-gradient(" + this.top_color + " 0%, rgba(0, 0, 0, 0.25) 15%)"
-      }
+    title: {
+      type: String,
+      required: true
+    },
+    subtitle: {
+      type: String,
+      required: true
+    },
+    top_color: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    backgroundImageStyle () {
+      return "background: url('" + require(`@/assets/images/${this.background_image}`) + " ') center; background-size: cover;"
+    },
+    backgroundFadeStyle () {
+      return 'background: linear-gradient(' + this.top_color + ' 0%, rgba(0, 0, 0, 0.25) 15%)'
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
