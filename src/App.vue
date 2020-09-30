@@ -11,23 +11,23 @@
 </template>
 
 <script>
-  import LayoutNavbar from './components/layout/LayoutNavbar';
-  import LayoutFooter from './components/layout/LayoutFooter';
-  export default {
-    name: 'ailg',
-    components: {
-      LayoutNavbar,
-      LayoutFooter
-    },
-    computed: {
-      initialized() {
-        return this.$store.state.initialized;
-      }
-    },
-    created() {
-      this.$store.dispatch('initializeStore');
+import LayoutNavbar from './components/layout/LayoutNavbar'
+import LayoutFooter from './components/layout/LayoutFooter'
+export default {
+  name: 'ailg',
+  components: {
+    LayoutNavbar,
+    LayoutFooter
+  },
+  computed: {
+    initialized () {
+      return this.$store.state.initialized
     }
-  };
+  },
+  created () {
+    this.$store.dispatch('initializeStore')
+  }
+}
 </script>
 
 <style>

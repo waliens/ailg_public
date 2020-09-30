@@ -7,7 +7,6 @@
       subtitle="Lorem ipsum dolor sit amet, consec tetuer adipiscing elit. Praesent vestibu lum molestie lacus. Aenean nonummy hendrerit maurishasellus">
     </faded-hero>
 
-
     <section class="section presidentandevents">
       <div class="columns">
         <div class="column presidentword">
@@ -62,32 +61,32 @@
 </template>
 
 <script>
-import BeneficiaryCard from "@/components/home/BeneficiaryCard";
-import PartnersGrid from "@/components/home/PartnersGrid";
-import FadedHero from "@/components/layout/FadedHero";
-import EventList from "@/components/home/EventList";
-import Event from "@/utils/api/Event";
+import BeneficiaryCard from '@/components/home/BeneficiaryCard'
+import PartnersGrid from '@/components/home/PartnersGrid'
+import FadedHero from '@/components/layout/FadedHero'
+import EventList from '@/components/home/EventList'
+import Event from '@/utils/api/Event'
 
 export default {
   name: 'HomePage',
-  components: {EventList, BeneficiaryCard, PartnersGrid, FadedHero },
-  computed: {
-    async events() {
-      let events = await Event.getFutureEvents();
-      console.log(events);
+  components: { EventList, BeneficiaryCard, PartnersGrid, FadedHero },
+  models: {
+    async events () {
+      const events = await Event.getFutureEvents()
+      console.log(events)
       return [
         {
-          name: "Repas",
-          datetime: "2020-05-02T18:00:00"
+          name: 'Repas',
+          datetime: '2020-05-02T18:00:00'
         },
         {
-          name: "AG",
-          datetime: "2020-08-25T19:25:00"
+          name: 'AG',
+          datetime: '2020-08-25T19:25:00'
         }
       ]
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

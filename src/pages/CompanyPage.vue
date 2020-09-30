@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import FadedHero from "@/components/layout/FadedHero";
+import FadedHero from '@/components/layout/FadedHero'
 export default {
-  name: "CompanyPage",
-  components: {FadedHero}
+  name: 'CompanyPage',
+  components: { FadedHero }
 }
 </script>
 
