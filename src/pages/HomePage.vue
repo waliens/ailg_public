@@ -70,20 +70,9 @@ import Event from '@/utils/api/Event'
 export default {
   name: 'HomePage',
   components: { EventList, BeneficiaryCard, PartnersGrid, FadedHero },
-  models: {
+  computed: {
     async events () {
-      const events = await Event.getFutureEvents()
-      console.log(events)
-      return [
-        {
-          name: 'Repas',
-          datetime: '2020-05-02T18:00:00'
-        },
-        {
-          name: 'AG',
-          datetime: '2020-08-25T19:25:00'
-        }
-      ]
+      return (await (new Event()).getFutureEvents()).map(e => { return {name: e.title, datetime: e.start} })
     }
   }
 }
