@@ -1,7 +1,8 @@
 {
   "name": "ailg_public",
   "scripts": {
-    "start": "npx vue-cli-service serve",
+    "serve": "npx vue-cli-service serve",
+    "build": "npx vue-cli-service build",
     "translations2json": "npx i18n-csv2json-cli --from src/locales/translations.csv --to src/locales/json --format",
     "watch-translations": "npx onchange -i 'src/locales/translations.csv' -- npm run-script translations2json"
   },
